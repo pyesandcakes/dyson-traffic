@@ -91,8 +91,6 @@ def fetch_flow_grid(
     ny: int = 5,
     key: Optional[str] = None,
     delay: float = 0.3,
-    save_raw: bool = False,
-    out_prefix: Optional[str] = None,
 ) -> Tuple[pd.DataFrame, dict]:
     """Fetch flow data for a grid over `bbox`.
 
@@ -103,9 +101,6 @@ def fetch_flow_grid(
         key = get_api_key()
     minLon, minLat, maxLon, maxLat = bbox
     rows = []
-    raw_path = f"{out_prefix}.jsonl" if out_prefix else None
-    if raw_path and save_raw and os.path.exists(raw_path):
-        os.remove(raw_path)
 
     total = nx * ny
     i = 0
@@ -116,17 +111,11 @@ def fetch_flow_grid(
         except Exception as e:
             item = {"lat": lat, "lon": lon, "error": str(e)}
         rows.append(item)
-        if raw_path and save_raw:
-            with open(raw_path, "a", encoding="utf8") as f:
-                f.write(json.dumps(item, ensure_ascii=False) + "\n")
+        # no saving done here; fetching only
         time.sleep(delay)
 
     df = pd.DataFrame(rows)
-    if out_prefix:
-        csv_path = f"{out_prefix}.csv"
-        df.to_csv(csv_path, index=False)
-        json_path = f"{out_prefix}.json"
-        df.to_json(json_path, orient="records", force_ascii=False)
+    # Do not write any files here; return DataFrame and summary for caller to save
 
     summary = {}
     if "currentSpeed" in df.columns:
@@ -138,10 +127,7 @@ def fetch_flow_grid(
         summary["p50_speed_kmph"] = float(speeds.quantile(0.5)) if speeds.count() else None
         summary["p75_speed_kmph"] = float(speeds.quantile(0.75)) if speeds.count() else None
 
-    if out_prefix:
-        summary_path = f"{out_prefix}_summary.json"
-        with open(summary_path, "w", encoding="utf8") as f:
-            json.dump(summary, f, indent=2, ensure_ascii=False)
+    # summary not saved here
 
     return df, summary
 
@@ -152,15 +138,13 @@ def fetch_for_region(
     ny: int = 5,
     key: Optional[str] = None,
     delay: float = 0.3,
-    save_raw: bool = False,
-    out_prefix: Optional[str] = None,
 ) -> Tuple[pd.DataFrame, dict]:
     """Geocode `place_name` to a bbox and fetch the grid.
 
     Example: fetch_for_region("Eindhoven", nx=4, ny=4, out_prefix="eindhoven")
     """
     bbox = geocode_place(place_name)
-    return fetch_flow_grid(bbox, nx=nx, ny=ny, key=key, delay=delay, save_raw=save_raw, out_prefix=out_prefix)
+    return fetch_flow_grid(bbox, nx=nx, ny=ny, key=key, delay=delay)
 
 
 if __name__ == "__main__":
@@ -171,9 +155,7 @@ if __name__ == "__main__":
     parser.add_argument("--place", help="Place name to geocode (e.g. Eindhoven)")
     parser.add_argument("--nx", type=int, default=5)
     parser.add_argument("--ny", type=int, default=5)
-    parser.add_argument("--out", default="tomtom_samples")
     parser.add_argument("--delay", type=float, default=0.3)
-    parser.add_argument("--save-raw", action="store_true")
     args = parser.parse_args()
 
     if args.place:
@@ -184,5 +166,5 @@ if __name__ == "__main__":
     else:
         parser.error("Either --place or --bbox is required")
 
-    df, summary = fetch_flow_grid(bbox, nx=args.nx, ny=args.ny, delay=args.delay, save_raw=args.save_raw, out_prefix=args.out)
+    df, summary = fetch_flow_grid(bbox, nx=args.nx, ny=args.ny, delay=args.delay)
     print("Summary:", json.dumps(summary, indent=2, ensure_ascii=False))
