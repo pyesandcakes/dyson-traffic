@@ -1,0 +1,12 @@
+2025-12-02 16:46:49,335 INFO Running quick coverage check for Eindhoven
+2025-12-02 16:46:49,561 INFO 51.400047,5.356718 -> currentSpeed=59 freeFlow=59 confidence=1
+2025-12-02 16:46:49,943 INFO 51.448563,5.356718 -> currentSpeed=62 freeFlow=62 confidence=1
+2025-12-02 16:46:50,312 INFO 51.497078,5.356718 -> currentSpeed=43 freeFlow=121 confidence=1
+2025-12-02 16:46:50,688 INFO 51.400047,5.452786 -> currentSpeed=66 freeFlow=66 confidence=1
+2025-12-02 16:46:51,065 INFO 51.448563,5.452786 -> currentSpeed=13 freeFlow=32 confidence=1
+2025-12-02 16:46:51,447 INFO 51.497078,5.452786 -> currentSpeed=44 freeFlow=53 confidence=1
+2025-12-02 16:46:51,825 INFO 51.400047,5.548853 -> currentSpeed=118 freeFlow=118 confidence=1
+2025-12-02 16:46:52,216 INFO 51.448563,5.548853 -> currentSpeed=39 freeFlow=50 confidence=1
+2025-12-02 16:46:52,592 INFO 51.497078,5.548853 -> currentSpeed=60 freeFlow=60 confidence=1
+2025-12-02 16:46:52,897 INFO Coverage check complete: 9/9 points returned speed data
+2025-12-02 16:46:52,898 INFO Saved 9 good points to /Users/Bruno/Library/CloudStorage/OneDrive-TUEindhoven/IGNITE/data/data/tomtom/eindhoven/points.json

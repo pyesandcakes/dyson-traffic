@@ -1,0 +1,101 @@
+[
+  {
+    "lat": 51.4000475,
+    "lon": 5.3567184,
+    "currentSpeed": 59,
+    "freeFlowSpeed": 59,
+    "confidence": 1,
+    "currentTravelTime": 125,
+    "freeFlowTravelTime": 125,
+    "street": "Veldhovenseweg",
+    "address": "Veldhovenseweg 3, 5511 KJ Knegsel"
+  },
+  {
+    "lat": 51.4485627,
+    "lon": 5.3567184,
+    "currentSpeed": 62,
+    "freeFlowSpeed": 62,
+    "confidence": 1,
+    "currentTravelTime": 142,
+    "freeFlowTravelTime": 142,
+    "street": "Pullen",
+    "address": "Pullen 11, 5513 NP Wintelre"
+  },
+  {
+    "lat": 51.4970779,
+    "lon": 5.3567184,
+    "currentSpeed": 122,
+    "freeFlowSpeed": 122,
+    "confidence": 1,
+    "currentTravelTime": 107,
+    "freeFlowTravelTime": 107,
+    "street": "Dijkpad",
+    "address": "Dijkpad 1, 5684 LL Best"
+  },
+  {
+    "lat": 51.4000475,
+    "lon": 5.4527856,
+    "currentSpeed": 66,
+    "freeFlowSpeed": 66,
+    "confidence": 1,
+    "currentTravelTime": 15,
+    "freeFlowTravelTime": 15,
+    "street": "Heistraat",
+    "address": "Heistraat 43, 5581 VW Waalre"
+  },
+  {
+    "lat": 51.4485627,
+    "lon": 5.4527856,
+    "currentSpeed": 24,
+    "freeFlowSpeed": 31,
+    "confidence": 1,
+    "currentTravelTime": 89,
+    "freeFlowTravelTime": 69,
+    "street": "Beukenlaan",
+    "address": "Beukenlaan 2A, 5651 CD Eindhoven"
+  },
+  {
+    "lat": 51.4970779,
+    "lon": 5.4527856,
+    "currentSpeed": 53,
+    "freeFlowSpeed": 53,
+    "confidence": 1,
+    "currentTravelTime": 146,
+    "freeFlowTravelTime": 146,
+    "street": "Science Park Eindhoven",
+    "address": "Science Park Eindhoven 5057, 5692 EB Son en Breugel"
+  },
+  {
+    "lat": 51.4000475,
+    "lon": 5.5488528,
+    "currentSpeed": 118,
+    "freeFlowSpeed": 118,
+    "confidence": 1,
+    "currentTravelTime": 151,
+    "freeFlowTravelTime": 151,
+    "street": "Genoenhuis",
+    "address": "Genoenhuis, 5591 Heeze"
+  },
+  {
+    "lat": 51.4485627,
+    "lon": 5.5488528,
+    "currentSpeed": 51,
+    "freeFlowSpeed": 51,
+    "confidence": 1,
+    "currentTravelTime": 353,
+    "freeFlowTravelTime": 353,
+    "street": "Collseweg",
+    "address": "Collseweg 19, 5674 TR Nuenen"
+  },
+  {
+    "lat": 51.4970779,
+    "lon": 5.5488528,
+    "currentSpeed": 60,
+    "freeFlowSpeed": 60,
+    "confidence": 1,
+    "currentTravelTime": 99,
+    "freeFlowTravelTime": 99,
+    "street": "Laar",
+    "address": "Laar 88, 5674 PB Nuenen"
+  }
+]
