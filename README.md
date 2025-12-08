@@ -1,6 +1,6 @@
 ## Project description
 
-This project collects traffic data for the Eindhoven region using the TomTom Traffic API and combines it with weather information and NDW incident data to train a machine-learning model that predicts traffic conditions.
+This project collects traffic data for the Eindhoven region using the TomTom Traffic API and combines it with weather information to train a machine-learning model that predicts traffic conditions.
 The goal is to estimate how early drivers should be warned under different traffic and weather scenarios.
 
 ## Project structure
