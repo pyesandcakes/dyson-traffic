@@ -1,3 +1,8 @@
+I have realized that this prediction model should only be a fallback in case real-time live data fails. Also possible use case is determining the base times per segment of street and additional times to add on top of base time for light activation from EM starting point to ETA to specific light pole.
+
+
+
+
 ## Project description
 
 This project collects traffic data for the Eindhoven region using the TomTom Traffic API and combines it with weather information to train a machine-learning model that predicts traffic conditions.
